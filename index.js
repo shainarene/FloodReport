@@ -11,6 +11,8 @@ var votingBoothConfig = {
 
 var survey = new VotingBooth(votingBoothConfig);
 
+app.use(express.static('public'));
+
 app.get('/tally', function (req, res) {
     var result = survey.getVoteTally();
 
