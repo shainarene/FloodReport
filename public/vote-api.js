@@ -15,6 +15,20 @@ window.onload = function () {
                 let listItem = document.createElement('li');
                 listItem.classList.add('choice', 'flex-center');
                 listItem.innerText = choice;
+
+                listItem.addEventListener('click', function (event) {
+                    let choice = event.toElement.innerText;
+
+                    window.fetch('ballot/' + choice, { method: "POST" })
+                        .then( (resp) => resp.json() )
+                        .then( function (data) {
+                            if (data.error) {
+                                window.alert(data.error);
+                            } else {
+                                window.location = 'results.html'
+                            }
+                        });
+                });
                 choicesList.appendChild(listItem);
             });
         })
