@@ -1,0 +1,53 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #ddd;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.panel {
+    text-align: center;
+    background-color: #27c;
+    min-width: 400px;
+    min-height: 250px;
+    border-radius: 12px;
+}
+
+.choice {
+    height: 2.5em;
+    margin: auto;
+    list-style-type: none;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 6px;
+}
+
+.choice:hover {
+    background-color: #eee;
+}
+
+#results-button {
+    color: #eee;
+    font-size: 1.6em;
+    margin: 0.5em;
+}
+
+h1 {
+    font-size: 2.0em;
+    color: #eee;
+    padding: 0.5em;
+}
