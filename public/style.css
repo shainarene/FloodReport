@@ -25,6 +25,7 @@ body {
     min-width: 400px;
     min-height: 250px;
     border-radius: 12px;
+    padding: 6px;
 }
 
 .choice {
@@ -33,7 +34,17 @@ body {
     list-style-type: none;
     background-color: #fff;
     border-radius: 8px;
-    margin: 6px;
+    margin: 6px 0;
+    color: #27c;
+    font-size: 1.2em;
+}
+
+.result {
+    height: 2.5em;
+    margin: auto;
+    list-style-type: none;
+    color: #eee;
+    font-size: 1.3em;
 }
 
 .choice:hover {
@@ -43,7 +54,6 @@ body {
 #results-button {
     color: #eee;
     font-size: 1.6em;
-    margin: 0.5em;
 }
 
 h1 {
