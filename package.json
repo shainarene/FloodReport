@@ -1,0 +1,11 @@
+{
+  "name": "VotingBoothApp",
+  "version": "1.0.0",
+  "description": "A NodeJS Voting Booth",
+  "main": "index.js",
+  "author": "Joshua Breeden <jbree@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
