@@ -31,7 +31,10 @@ function VotingBooth (config) {
     // return an object with the vote count for each choice
     this.getVoteTally = function () {
         console.log(votes);
-        return votes;
+        return {
+            question: question,
+            results: votes
+        };
     }
 }
 
