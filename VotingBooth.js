@@ -1,39 +1,45 @@
 
-function VotingBooth (config) {
-    /* choices: string[] of possible survey options */
-    var question = config.question;
-    var choices = config.choices;
+class VotingBooth {
 
-    /* vote count for each choice */
-    var votes = {};
+    // initialize this VotingBooth
+    constructor(config) {
+        // the question being asked
+        this.question = config.question;
+        // array of possible survey options
+        this.choices = config.choices;
 
-    choices.forEach(function (choice) {
-        votes[choice] = 0;
-    });
+        // vote count for each choice
+        this.votes = {};
 
-    this.getBallotInfo = function () {
+        this.choices.forEach( (choice) => {
+            this.votes[choice] = 0;
+        });
+    }
+
+    // return an object with info about the question and choices
+    getBallotInfo () {
         return {
-            question: question,
-            choices: choices
+            question: this.question,
+            choices: this.choices
         };
     }
 
     // return true if vote was successfully cast, false otherwise
-    this.castVote = function (choice) {
+    castVote (choice) {
         console.log("castVote: " + choice);
-        if (votes.hasOwnProperty(choice)) {
-            votes[choice]++;
+        if (this.votes.hasOwnProperty(choice)) {
+            this.votes[choice]++;
             return true;
         }
         return false;
     }
 
     // return an object with the vote count for each choice
-    this.getVoteTally = function () {
-        console.log(votes);
+    getVoteTally () {
+        console.log(this.votes);
         return {
-            question: question,
-            results: votes
+            question: this.question,
+            results: this.votes
         };
     }
 }
