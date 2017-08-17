@@ -11,9 +11,10 @@ class VotingBooth {
         // vote count for each choice
         this.votes = {};
 
-        this.choices.forEach( (choice) => {
+        // set the vote count for each choice to 0
+        for (let choice of this.choices) {
             this.votes[choice] = 0;
-        });
+        }
     }
 
     // return an object with info about the question and choices
@@ -26,11 +27,12 @@ class VotingBooth {
 
     // return true if vote was successfully cast, false otherwise
     castVote (choice) {
-        console.log("castVote: " + choice);
         if (this.votes.hasOwnProperty(choice)) {
+            console.log("castVote: " + choice);
             this.votes[choice]++;
             return true;
         }
+        console.log("castVote: " + choice + " failed");
         return false;
     }
 
