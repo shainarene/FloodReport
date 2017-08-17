@@ -17,7 +17,7 @@ window.onload = function () {
                 listItem.innerText = choice;
 
                 listItem.addEventListener('click', function (event) {
-                    let choice = event.toElement.innerText;
+                    let choice = event.target.innerText;
 
                     window.fetch('ballot/' + choice, { method: "POST" })
                         .then( (resp) => resp.json() )
