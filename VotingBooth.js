@@ -36,7 +36,7 @@ class VotingBooth {
 
     // return an object with the vote count for each choice
     getVoteTally () {
-        console.log(this.votes);
+        console.log("getVoteTally: " + JSON.stringify(this.votes));
         return {
             question: this.question,
             results: this.votes
