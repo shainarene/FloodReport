@@ -12,8 +12,6 @@ class FloodData {
         var wb = xlsx.readFile(filename);
         /* generate array of arrays */
         data = xlsx.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {header:1});
-        console.log(data.length);
-        console.log(data[1]);
         return data;
     }
 }

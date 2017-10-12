@@ -1,13 +1,21 @@
-const CsvParser = require("./csv-parser");
+const parser = require("./parsers");
 
 class FloodEvent {
     
     constructor(row) {
         this.registerNumber = row[0];
         this.country = row[3];
-        this.locations = this.parseLocations(row[7]);
-        this.beginDate = row[9];
-        this.endDate = row[10];
+        this.locations = parser.csvToArray(row[7]);
+        if(typeof row[9] != 'undefined') {
+            this.beginDate = parser.stringToDate(row[9], "dd-mmm-yy");
+        } else {
+            this.beginDate = new Date(1900, 1, 1);
+        }
+        if(typeof row[10] != 'undefined') {
+            this.endDate = parser.stringToDate(row[10], "dd-mmm-yy");            
+        } else {
+            this.endDate = new Date(1900, 1, 1);
+        }
         this.durationInDays = row[11];
         this.numberOfDeaths = row[12];
         this.numberDisplaced = row[13];
@@ -17,6 +25,10 @@ class FloodEvent {
         this.magnitude = row[18];
         this.centroidX = row[19];
         this.centroidY = row[20];
+    }
+
+    getYear() {
+        return this.beginDate.getFullYear();
     }
 
     parseLocations(csvLocations) {
