@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "VotingBoothApp",
   "version": "1.0.0",
   "description": "A NodeJS Voting Booth",
@@ -7,5 +8,21 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.4"
+=======
+  "name": "FloodReport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "linq": "^3.0.9",
+    "xlsx": "^0.11.5"
+>>>>>>> 3eabfb66d5aecc78a3594173816e92c1b3bb4fd2
   }
 }
