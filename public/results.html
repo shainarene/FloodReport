@@ -2,18 +2,46 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>VotingBooth Results</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Voting Booth Results</title>
         <script src="results-api.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
     <body>
         <div class="container flex-center">
-            <div class="panel">
-                <h1 id="question"></h1>
-                <ul id="results">
-                    <!-- <li class="result flex-center">Result</li> -->
-                </ul>
+            <div class ="panel">
+                <h1 id="question">Title of the Question</h1>
+                <h2>Answers</h2>
+                <div id="answer_text"></div>
+                <ul id="results"></ul>
             </div>
         </div>
+
+        <script>
+
+//run python script to refresh/make changes as the data changes	
+            function runPython() {
+            }
+
+//ref: AJAX "Hello World" - https://www.w3schools.com/xml/ajax_intro.asp		
+            function loadDoc() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("answer_text").innerHTML =
+                                this.responseText;
+                    }
+                };
+                xhttp.open("GET", "output_file.txt", true);
+                xhttp.send();
+            }
+			
+			//run the python script to update any changed data
+            runPython();
+			
+			//load the results from the data changes to the html page
+            loadDoc();
+        </script>
+
     </body>
 </html>

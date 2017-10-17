@@ -5,8 +5,8 @@ var port = process.env.PORT || 3000;
 var VotingBooth = require('./VotingBooth');
 
 var votingBoothConfig = {
-    question: "Which baseball team do you like best?",
-    choices: ["Yankees", "Red Sox", "Dodgers", "Astros"]
+    question: "What type of flood occurred the most between 2000 and 2009?",
+    choices: ["Class 1", "Class 1.5", "Class 2"]
 };
 
 var survey = new VotingBooth(votingBoothConfig);

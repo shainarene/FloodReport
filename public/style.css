@@ -1,31 +1,29 @@
-* {
-    margin: 0px;
-    padding: 0px;
+#home-header{
+background-color:#092147 !important;
+color:white;
+min-height:50vh;
+margin-bottom:0px;
 }
 
-body {
-    background-color: #ddd;
+#home-header-text{
+margin-top:45px;
+font-size:80px;
+font-family:Trebuchet MS;
 }
 
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+hr{
+margin-top:3vw !important;
+margin-bottom:5vw !important;
 }
 
-.container {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+.glyphicon{
+color:white;
+font-size:80px;
 }
 
 .panel {
-    text-align: center;
     background-color: #27c;
-    min-width: 400px;
-    min-height: 250px;
     border-radius: 12px;
-    padding: 6px;
 }
 
 .choice {
@@ -52,12 +50,5 @@ body {
 }
 
 #results-button {
-    color: #eee;
-    font-size: 1.6em;
-}
-
-h1 {
-    font-size: 2.0em;
-    color: #eee;
-    padding: 0.5em;
+    color: gray;
 }
